@@ -1,0 +1,41 @@
+# FastAPI and server
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Database
+sqlalchemy
+psycopg2-binary
+alembic
+
+# Scraping
+firecrawl-py
+
+# LLM
+ollama
+
+# Task scheduling
+apscheduler
+
+# Notifications
+aiosmtplib
+email-validator
+discord-webhook
+
+# WebSocket
+websockets
+
+# Environment and config
+python-dotenv
+pydantic
+pydantic-settings
+
+# Utilities
+httpx
+aiohttp
+python-dateutil
+
+# Development
+pytest
+pytest-asyncio
+black
