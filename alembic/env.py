@@ -5,14 +5,20 @@ from sqlalchemy import pool
 
 from alembic import context
 
-from models.career_page import CareerPage
-from models.job_posting import JobPosting
-from models.notification import Notification, NotificationQueue
-from models.user import User
+import os
+
+from app.models import Base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
+
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    config.get_main_option("sqlalchemy.url"),
+)
+
+config.set_main_option("sqlalchemy.url", DATABASE_URL)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
@@ -43,9 +49,8 @@ def run_migrations_offline() -> None:
     script output.
 
     """
-    url = config.get_main_option("sqlalchemy.url")
     context.configure(
-        url=url,
+        url=DATABASE_URL,
         target_metadata=target_metadata,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},

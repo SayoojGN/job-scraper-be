@@ -5,7 +5,7 @@ from datetime import datetime
 import uuid
 import enum
 
-from app.database import Base
+from app.models.base import Base
 
 
 class NotificationChannel(str, enum.Enum):

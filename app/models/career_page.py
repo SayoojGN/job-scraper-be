@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 from datetime import datetime
 import uuid
 
-from app.database import Base
+from app.models.base import Base
 
 
 class CareerPage(Base):
